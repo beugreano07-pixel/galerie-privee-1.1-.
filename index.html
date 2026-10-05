@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamFlex Premium</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { 
+            font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            background: linear-gradient(135deg, #0f0c1b 0%, #05050a 100%); 
+            color: #fff; 
+            margin: 0; 
+            padding-bottom: 40px; 
+            min-height: 100vh;
+        }
+        
+        /* Barre de navigation */
+        nav { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: #050507; 
+            padding: 15px 5%; 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
+        }
+        .logo { font-size: 22px; font-weight: bold; color: #ff2a5f; text-decoration: none; }
+        .nav-links a { color: #aaa; text-decoration: none; margin-left: 20px; font-size: 14px; }
+
+        /* Conteneur principal */
+        .main-container { 
+            width: 100%; 
+            max-width: 600px; 
+            margin: 0 auto; 
+            padding: 0 15px; 
+        }
+
+        /* Faux Lecteur Vidéo */
+        .player-box { 
+            width: 100%; 
+            aspect-ratio: 16/9;
+            background: #000; 
+            border-radius: 16px; 
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-top: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .player-bg { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+        .play-button-overlay {
+            position: absolute;
+            width: 65px;
+            height: 65px;
+            background: rgba(255, 42, 95, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(255, 42, 95, 0.5);
+        }
+        .play-button-overlay svg { width: 25px; height: 25px; fill: white; margin-left: 4px; }
+        
+        .fake-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #ddd;
+        }
+        .timeline-bar { flex-grow: 1; height: 4px; background: rgba(255,255,255,0.2); margin: 0 15px; border-radius: 2px; }
+
+        /* Infos sous le lecteur */
+        .video-details { text-align: left; margin-bottom: 25px; }
+        .video-title { font-size: 22px; font-weight: 700; margin: 0 0 5px 0; }
+        .video-desc { color: #aaa; font-size: 14px; line-height: 1.5; margin: 0; }
+
+        /* Section Galerie */
+        .section-title { 
+            font-size: 16px; 
+            font-weight: 600; 
+            color: #ff2a5f; 
+            text-align: left; 
+            margin-bottom: 12px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+        }
+        .grid-gallery { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 12px; 
+        }
+        .photo-card {
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: #12111a;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .photo-card img { 
+            width: 100%; 
+            height: 100%;
+            object-fit: cover; 
+            aspect-ratio: 1/1; 
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">🍿 StreamFlex</a>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <!-- Faux Lecteur Vidéo Bloqué -->
+        <div class="player-box" onclick="alert('Vérifier votre connexion et réessayer')">
+            <img src="./miniature.jpeg" class="player-bg">
+            <div class="play-button-overlay">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <div class="fake-controls">
+                <span>0:00</span>
+                <div class="timeline-bar"></div>
+                <span>3:22</span>
+            </div>
+        </div>
+
+        <!-- Infos de la vidéo modifiées selon votre demande -->
+        <div class="video-details">
+            <h1 class="video-title">Aperçu et Coulisses</h1>
+            <p class="video-desc">vidéos, photos, journaux :Masturbation de Ano Beugre</p>
+        </div>
+
+        <div class="section-title">Galerie Photos</div>
+
+        <!-- Grille contenant vos 4 images .jpeg -->
+        <div class="grid-gallery">
+            <div class="photo-card"><img src="./image.jpeg" alt="Photo 1"></div>
+            <div class="photo-card"><img src="./image1.jpeg" alt="Photo 2"></div>
+            <div class="photo-card"><img src="./image3.jpeg" alt="Photo 3"></div>
+            <div class="photo-card"><img src="./image4.jpeg" alt="Photo 4"></div>
+        </div>
+    </div>
+
+</body>
+</html>
